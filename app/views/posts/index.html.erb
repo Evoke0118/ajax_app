@@ -1,19 +1,22 @@
 <h1>AjaxApp</h1>
 <%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
-  <%= form.text_field :content %>
-  <%= form.submit '投稿する' , id: "submit" %>
-<% end %>　  
+  <%= form.text_field :content  , id: "content" %>  <%# memo.jsの１６行目を取得 %>
+  <%= form.submit '投稿する' , id: "submit" %>   <%# idに注目 %>
+<% end %>
 
+
+<div id="list">  <%# 投稿後にメモを追加する要素 %>
+</div>
 
 <% @posts.each do |post| %>
-  <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>　　<%# ここから　%>
+  <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>    <%# ここから %>
     <%# 前者はメモのidが入り、後者は既読の有無を管理するcheckedカラムの情報が入る%>
-    <div class="post-date">　
-      投稿日時：<%= post.created_at %>
+    <div class="post-date">
+          投稿日時：<%= post.created_at %>
     </div>
     <div class="post-content">
       <%= post.content %>
     </div>
-  </div>　　　　　　　　　　　　　　　　　　　<%# ここまでの部分をクリックしたときにイベントを発火させたい　%>
+  </div>                                 <%# ここまでの部分をクリックしたときにイベントを発火させたい %>
 <% end %>
 
