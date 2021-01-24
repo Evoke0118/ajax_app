@@ -7,8 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("../checked")　//直下のファイルを読み込むために。
-require("../memo")　　　// ↑同じ
+require("../checked")  //直下のファイルを読み込むために。
+require("../memo")     // ↑同じ
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
